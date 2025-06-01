@@ -34,6 +34,7 @@ jobs:
             - source-path: "libraries/SparkFun_Ublox_Arduino_Library-master"
             - source-path: "libraries/ZeroAPRS"
             - source-path: "libraries/ZeroSi4463"
+            - source-path: "LightAPRS-2-hab/callsign_secret.h"
           fqbn: "arduino:samd:mkr1000"
           sketch-paths: |
             - LightAPRS-2-hab
