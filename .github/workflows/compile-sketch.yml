@@ -27,7 +27,7 @@ jobs:
             - source-path: "libraries/LightAPRS_Adafruit_BMP085_Library"
             - source-path: "libraries/LightAPRS_Adafruit_SleepyDog"
             - source-path: "libraries/LightAPRS_Adafruit_ZeroTimer-master"
-            - source-path: "libraries/LightAPRS_Adafruit_Geofence"
+            - source-path: "libraries/LightAPRS_Geofence"
             - source-path: "libraries/LightAPRS_Si5351Arduino"
             - source-path: "libraries/LightAPRS_Time"
             - source-path: "libraries/LightAPRS_TinyGPSPlus-0.95"
