@@ -1,12 +1,7 @@
 name: Compile Sketches
 
 on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
+  [pull_request]
 
 jobs:
   compile-sketches:
