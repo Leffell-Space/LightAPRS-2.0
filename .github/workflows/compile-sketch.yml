@@ -40,7 +40,7 @@ jobs:
             - source-path: "libraries/SparkFun_Ublox_Arduino_Library-master"
             - source-path: "libraries/ZeroAPRS"
             - source-path: "libraries/ZeroSi4463"
-          fqbn: "arduino:samd:arduino_m0"
+          fqbn: "arduino:samd:mzero_bl"
           sketch-paths: |
             - LightAPRS-2-hab
           enable-deltas-report: true
