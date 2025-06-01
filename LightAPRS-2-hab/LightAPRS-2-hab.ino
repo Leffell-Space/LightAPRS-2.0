@@ -7,6 +7,7 @@
 #include <ZeroAPRS.h>                       //https://github.com/hakkican/ZeroAPRS
 #include <SparkFun_Ublox_Arduino_Library.h> //https://github.com/sparkfun/SparkFun_Ublox_Arduino_Library
 #include <Adafruit_BMP085.h>                //https://github.com/adafruit/Adafruit-BMP085-Library
+#include "callsign_secret.h"
 
 #define BattPin       A5
 #define GpsPwr        7
@@ -27,7 +28,7 @@
 //#define DEVMODE // Development mode. Uncomment to enable for debugging.
 
 //******************************  APRS CONFIG **********************************
-char    CallSign[7]="NOCALL"; //DO NOT FORGET TO CHANGE YOUR CALLSIGN
+// char    CallSign[7]="NOCALL"; //DO NOT FORGET TO CHANGE YOUR CALLSIGN (moved to callsign_secret.h)
 int8_t  CallNumber=11;//SSID http://www.aprs.org/aprs11/SSIDs.txt
 char    Symbol='O'; // 'O' for balloon, '>' for car, for more info : http://www.aprs.org/symbols/symbols-new.txt
 bool    alternateSymbolTable = false ; //false = '/' , true = '\'
