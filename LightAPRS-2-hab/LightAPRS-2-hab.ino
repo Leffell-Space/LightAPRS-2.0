@@ -3,7 +3,7 @@
 #include <math.h>
 #include <stdio.h>
 #include <avr/dtostrf.h>
-//#include <MemoryFree.h>
+#include <MemoryFree.h>
 #include <ZeroAPRS.h>                       //https://github.com/hakkican/ZeroAPRS
 #include <SparkFun_Ublox_Arduino_Library.h> //https://github.com/sparkfun/SparkFun_Ublox_Arduino_Library
 #include <Adafruit_BMP085.h>                //https://github.com/adafruit/Adafruit-BMP085-Library
@@ -485,7 +485,7 @@ float readBatt() {
 }
 
 void freeMem() {
-#if defined(DEVMODE) && (defined(__AVR__) || defined(ARDUINO_ARCH_AVR))
+#if defined(DEVMODE)
   SerialUSB.print(F("Free RAM: ")); SerialUSB.print(freeMemory(), DEC); SerialUSB.println(F(" byte"));
 #endif
 

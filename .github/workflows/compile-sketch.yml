@@ -22,6 +22,18 @@ jobs:
         with:
           platforms: |
             - name: "arduino:samd"
+          libraries: |
+            - source-path: "libraries/Arduino-MemoryFree"
+            - source-path: "libraries/LightAPRS_Adafruit_BMRP085_Library"
+            - source-path: "libraries/LightAPRS_Adafruit_SleepyDog"
+            - source-path: "libraries/LightAPRS_Adafruit_ZeroTimer-master"
+            - source-path: "libraries/LightAPRS_Adafruit_Geofence"
+            - source-path: "libraries/LightAPRS_Si5351Arduino"
+            - source-path: "libraries/LightAPRS_Time"
+            - source-path: "libraries/LightAPRS_TinyGPSPlus-0.95"
+            - source-path: "libraries/SparkFun_Ublox_Arduino_Library-master"
+            - source-path: "libraries/ZeroAPRS"
+            - source-path: "libraries/ZeroSi4463"
           fqbn: "arduino:samd:mkr1000"
           sketch-paths: |
             - LightAPRS-2-hab
