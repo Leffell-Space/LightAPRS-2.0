@@ -16,6 +16,12 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Ensure callsign_secret.h exists
+        run: |
+          if [ ! -f LightAPRS-2-hab/callsign_secret.h ]; then
+            cp LightAPRS-2-hab/callsign_secret.h.template LightAPRS-2-hab/callsign_secret.h
+          fi
+
       # See: https://github.com/arduino/compile-sketches#readme
       - name: Compile sketches
         uses: arduino/compile-sketches@v1
