@@ -1,7 +1,7 @@
 name: Lint Sketches
 
 on:
-  [pull_request]
+  [pull_request, workflow_dispatch]
 
 jobs:
   lint-sketches:
