@@ -1,0 +1,61 @@
+name: Compile Sketches
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  compile-sketches:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Ensure callsign_secret.h exists
+        run: |
+          if [ ! -f LightAPRS-2-hab/callsign_secret.h ]; then
+            cp LightAPRS-2-hab/callsign_secret.h.template LightAPRS-2-hab/callsign_secret.h
+          fi
+
+      # See: https://github.com/arduino/compile-sketches#readme
+      - name: Compile sketches
+        uses: arduino/compile-sketches@v1
+        with:
+          platforms: |
+            - name: "arduino:samd"
+          libraries: |
+            - source-path: "libraries/Arduino-MemoryFree"
+            - source-path: "libraries/LightAPRS_Adafruit_BMP085_Library"
+            - source-path: "libraries/LightAPRS_Adafruit_SleepyDog"
+            - source-path: "libraries/LightAPRS_Adafruit_ZeroTimer-master"
+            - source-path: "libraries/LightAPRS_Geofence"
+            - source-path: "libraries/LightAPRS_Si5351Arduino"
+            - source-path: "libraries/LightAPRS_Time"
+            - source-path: "libraries/LightAPRS_TinyGPSPlus-0.95"
+            - source-path: "libraries/SparkFun_Ublox_Arduino_Library-master"
+            - source-path: "libraries/ZeroAPRS"
+            - source-path: "libraries/ZeroSi4463"
+          fqbn: "arduino:samd:mzero_bl"
+          sketch-paths: |
+            - LightAPRS-2-hab
+          enable-deltas-report: true
+
+      # This step is needed to pass the size data to the report job.
+      - name: Upload sketches report to workflow artifact
+        uses: actions/upload-artifact@v4
+        if: github.event_name == 'pull_request'
+        with:
+          name: sketches-reports
+          path: sketches-reports
+
+      - uses: arduino/report-size-deltas@v1
+        if: github.event_name == 'pull_request'
+        with:
+          sketches-reports-source: sketches-reports
+          github-token: ${{ secrets.SPACE_API_KEY_GITHUB_PR }}
+

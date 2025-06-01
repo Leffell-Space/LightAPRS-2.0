@@ -1,0 +1,24 @@
+name: Lint Sketches
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  lint-sketches:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Lint LightAPRS-2-hab
+        uses: arduino/arduino-lint-action@v2
+        with:
+          path: LightAPRS-2-hab
+          compliance: specification
+          
