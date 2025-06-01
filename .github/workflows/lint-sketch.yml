@@ -16,7 +16,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Lint src
+      - name: Lint LightAPRS-2-hab
         uses: arduino/arduino-lint-action@v2
         with:
           path: LightAPRS-2-hab
