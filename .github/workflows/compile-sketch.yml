@@ -25,8 +25,6 @@ jobs:
           fqbn: "arduino:samd:mkr1000"
           sketch-paths: |
             - LightAPRS-2-hab
-          libraries: |
-            - source-path: "libraries"
           enable-deltas-report: true
 
       # This step is needed to pass the size data to the report job.
@@ -42,4 +40,4 @@ jobs:
         with:
           sketches-reports-source: sketches-reports
           github-token: ${{ secrets.SPACE_API_KEY_GITHUB_PR }}
-          
+
