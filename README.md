@@ -10,5 +10,5 @@ Before building or uploading, you must set your own APRS callsign:
 
 Example:
 ```cpp
-char CallSign[7] = "MYCALL";
+char CallSign[7] = "N0CALL";
 ```
