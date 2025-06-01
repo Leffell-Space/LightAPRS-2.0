@@ -22,7 +22,7 @@ jobs:
         with:
           platforms: |
             - name: "arduino:samd"
-          fqbn: "arduino:samd:mzero"
+          fqbn: "arduino:samd:mkr1000"
           sketch-paths: |
             - LightAPRS-2-hab
           libraries: |
