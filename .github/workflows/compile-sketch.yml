@@ -41,7 +41,7 @@ jobs:
             - source-path: "libraries/ZeroAPRS"
             - source-path: "libraries/ZeroSi4463"
             - source-path: "LightAPRS-2-hab/callsign_secret.h"
-          fqbn: "arduino:samd:mkr1000"
+            fqbn: "arduino:samd:mzero"
           sketch-paths: |
             - LightAPRS-2-hab
           enable-deltas-report: true
