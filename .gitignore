@@ -1,3 +1,4 @@
 ### macOS ###
 # General
 .DS_Store
+/LightAPRS-2-hab/callsign_secret.h
