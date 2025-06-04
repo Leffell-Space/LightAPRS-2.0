@@ -35,7 +35,7 @@ bool    alternateSymbolTable = false ; //false = '/' , true = '\'
 char Frequency[9]="144.3900"; //default frequency. 144.3900 for US, 144.8000 for Europe
 
 char    comment[50] = "This is the Leffell Space High Altitude Balloon"; // Max 50 char but shorter is better
-char    StatusMessage[50] = "AM YISRAEL CHAI";
+char    StatusMessage[50] = "AM ISRAEL CHAI";
 //*****************************************************************************
 
 uint16_t  BeaconWait=50;  //seconds sleep for next beacon (HF or VHF). This is optimized value, do not change this if possible.
